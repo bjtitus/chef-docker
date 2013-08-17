@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-actions :pull, :remove
+actions :pull, :remove, :build
 
 default_action :pull
 

@@ -132,6 +132,13 @@ Remove image:
       action :remove
     end
 
+Build image:
+
+    docker_image "." do
+      action :build
+    end
+
+
 ## Usage
 
 ### Default Installation

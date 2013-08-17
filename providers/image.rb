@@ -37,6 +37,13 @@ def load_current_resource
   @current_resource
 end
 
+action :build do
+  build_options = ""
+  build_options += "-t #{new_resource.tag}" if new_resource.tag
+  shell_out("docker build #{build_options} #{new_resource.image_name}")
+  new_resource.updated_by_last_action(true)
+end
+
 action :pull do
   unless installed?
     pull_args = ""
